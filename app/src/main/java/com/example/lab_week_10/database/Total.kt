@@ -1,6 +1,7 @@
 package com.example.lab_week_10.database
 
 import androidx.room.ColumnInfo
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -11,6 +12,7 @@ data class Total(
     @ColumnInfo(name = "id")
     val id: Long = 0,
 
-    @ColumnInfo(name = "total")
-    val total: Int = 0
+    // total = value + date
+    @Embedded
+    val total: TotalObject
 )
